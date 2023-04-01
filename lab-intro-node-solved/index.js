@@ -37,7 +37,7 @@ class SortedList {
   }
 
   max() {
-    if (this.length === 0) {
+    if (!this.length) {
       throw new Error('EmptySortedList')
     }
 
@@ -45,7 +45,7 @@ class SortedList {
   }
 
   min() {
-    if (this.length === 0) {
+    if (!this.length) {
       throw new Error('EmptySortedList')
     }
 
@@ -53,7 +53,7 @@ class SortedList {
   }
 
   sum() {
-    if (this.length === 0) {
+    if (!this.length) {
       return 0
     }
 
@@ -61,7 +61,7 @@ class SortedList {
   }
 
   avg() {
-    if (this.length === 0) {
+    if (!this.length) {
       throw new Error('EmptySortedList')
     }
 
