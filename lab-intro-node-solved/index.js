@@ -5,26 +5,9 @@ class SortedList {
   }
 
   add(item) {
-    let start = 0
-    let end = this.length
+    this.items.push(item)
+    this.items.sort((a, b) => a - b)
 
-    if (item < this.items[0]) {
-      this.items.unshift(item)
-      return
-    } else if (item > this.items[this.length - 1]) {
-      this.items.push(item)
-      return
-    }
-
-    while (end - start > 1) {
-      let midpoint = Math.ceil((start + end) / 2)
-      if (this.items[midpoint] < item) {
-        start = midpoint
-      } else {
-        end = midpoint
-      }
-    }
-    this.items.splice(end, 0, item)
     this.length = this.items.length
   }
 
