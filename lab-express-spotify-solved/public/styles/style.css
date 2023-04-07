@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+/* INDEX PAGE */
+
+.index {
+  background-image: url("../images/spotify-background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.index form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.index form input {
+  width: 60%;
+  height: 3rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.index form button {
+  width: 30%;
+  height: 3rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fb6862;
+  color: white;
+}
+
+/* LIST PAGES */
+
+.list-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.list-card img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #4d4d4d;
+}
+
+.card-info p {
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  max-width: 10rem;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-info a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  background-color: #fb6862;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+/* ALBUM TRACKS PAGE */
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+
+thead {
+  background-color: #4d4d4d;
+  color: white;
+  height: 4rem;
+  font-size: 2rem;
+}
+
+td {
+  width: 50%;
+  padding: 8px;
+  padding: 8px 15px;
+  font-weight: bold;
+  background-color: #f6f6f6;
+  margin-bottom: 5px;
+}
+
+td:nth-child(2) {
+  text-align: right;
+}
