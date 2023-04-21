@@ -1,0 +1,18 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#errMessage {
+  background-color: red;
+  color: white;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.index-header {
+  font-size: 3em;
+  text-align: center;
+  margin-top: 6rem;
+}
