@@ -1,0 +1,44 @@
+{{#with formatedCourse}}
+  <div>
+    <img src='{{courseImg}}' alt='course image' />
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+    <p>Start date: {{startDate}}</p>
+    <p>End date: {{endDate}}</p>
+    <p>Status: {{status}}</p>
+    <p>Lead teacher:</p>
+    <ul>
+      {{#each leadTeacher}}
+        <li>{{username}}</li>
+      {{/each}}
+    </ul>
+    <p>TA:</p>
+    <ul>
+      {{#each ta}}
+        <li>{{username}}</li>
+      {{/each}}
+    </ul>
+    <p>Students:</p>
+    <ul>
+      {{#each students}}
+        <li>{{username}}</li>
+      {{/each}}
+    </ul>
+    {{#if isTA}}
+      <form action='/courses/{{_id}}/delete' method='POST'>
+        <button type='submit'>Delete course</button>
+      </form>
+
+      <a href='/courses/{{_id}}/edit'>Edit course</a>
+    {{/if}}
+    {{#unless (inArray ../currentUser students)}}
+      <form action='/courses/{{_id}}/join' method="POST">
+        <button type='submit'>Join course</button>
+      </form>
+    {{else}}
+      <form action='/courses/{{_id}}/leave' method="POST">
+        <button type='submit'>Leave course</button>
+      </form>
+    {{/unless}}
+  </div>
+{{/with}}

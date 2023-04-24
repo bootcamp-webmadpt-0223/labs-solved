@@ -1,0 +1,20 @@
+<h1>Courses list</h1>
+{{#if isTA}}
+  <a href='/courses/create'>Create new course</a>
+{{/if}}
+
+{{#each fomartedCourses}}
+  <div>
+    <img src='{{courseImg}}' alt='course image' />
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+    <p>Start date: {{startDate}}</p>
+    <p>End date: {{endDate}}</p>
+    <p>Status: {{status}}</p>
+    <a href='/courses/{{_id}}'>See course</a>
+  </div>
+{{/each}}
+
+{{#unless fomartedCourses}}
+  <p>No courses available!</p>
+{{/unless}}

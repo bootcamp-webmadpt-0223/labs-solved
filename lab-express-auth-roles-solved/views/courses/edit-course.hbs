@@ -1,0 +1,93 @@
+<div class='container'>
+
+  <div class='row justify-content-center'>
+
+    <div class='col-md-6'>
+
+      <h1>Edit Course {{course.title}}</h1>
+      <hr />
+
+      <form action='/courses/{{course._id}}/edit' method='POST'>
+
+        <div class='mb-3'>
+          <label for='tileInput' class='form-label'>Title</label>
+          <input type='text' value='{{course.title}}' class='form-control' id='tileInput' name='title' required />
+        </div>
+
+        <div class='mb-3'>
+          <label for='leadTeacherInput' class='form-label'>Lead teacher</label>
+          <select class='form-control' id='leadTeacherInput' name='leadTeacher' multiple required>
+            {{#each teachers}}
+              <option value='{{_id}}' {{#if (inArray this._id ../course.leadTeacher)}}selected{{/if}}>{{username}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        <div class='mb-3'>
+          <label for='startDateInput' class='form-label'>Start date</label>
+          <input type='date' value='{{formatDate course.startDate}}' class='form-control' id='startDateInput' name='startDate' required />
+        </div>
+
+        <div class='mb-3'>
+          <label for='endDateInput' class='form-label'>End date</label>
+          <input type='date' value='{{formatDate course.endDate}}' class='form-control' id='endDateInput' name='endDate' required />
+        </div>
+
+        <div class='mb-3'>
+          <label for='taInput' class='form-label'>TA</label>
+          <select class='form-control' id='taInput' name='ta' multiple required>
+            {{#each ta}}
+              <option value='{{_id}}' {{#if (inArray this._id ../course.ta)}}selected{{/if}}>{{username}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        <div class='mb-3'>
+          <label for='imageInput' class='form-label'>Image</label>
+          <input type='url' value='{{course.courseImg}}' class='form-control' id='imageInput' name='courseImg' required />
+          <div class='form-text'>Provide an image url for the course.</div>
+        </div>
+
+        <div class='mb-3'>
+          <label for='descriptionInput' class='form-label'>Description</label>
+          <textarea
+            class='form-control'
+            id='descriptionInput'
+            rows='3'
+            name='description'
+            required
+          >{{course.description}}</textarea>
+        </div>
+
+        <div class='mb-3'>
+          <label for='statusInput' class='form-label'>Status</label>
+          <select class='form-control' id='statusInput' name='status' required>
+            <option value='OFF' {{#if (eq course.status "OFF")}}selected{{/if}}>Off</option>
+            <option value='ON' {{#if (eq course.status "ON")}}selected{{/if}}>On</option>
+          </select>
+        </div>
+
+        <div class='mb-3'>
+          <label for='studentsInput' class='form-label'>Students</label>
+          <select class='form-control' id='studentsInput' name='students' multiple required>
+            {{#each students}}
+              <option value='{{_id}}' {{#if (inArray this._id ../course.students)}}selected{{/if}}>{{username}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        <div class='d-grid gap-2'>
+          <button type='submit' class='btn btn-dark block'>Submit</button>
+        </div>
+
+        {{#if errorMessage}}
+          <div id='errorMessage'>
+            <p>{{errorMessage}}</p>
+          </div>
+        {{/if}}
+
+      </form>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,11 @@
+<h1>Users list:</h1>
+
+<div class='user-list'>
+  {{#each users}}
+    {{username}}[{{role}}] [<a href='/students/{{_id}}'>View student profile</a>]
+    <br />
+  {{/each}}
+  {{#unless users}}
+    <p>No users registered!</p>
+  {{/unless}}
+</div>
