@@ -3,8 +3,7 @@ const Random = ({ min, max }) => {
 
   return (
     <p className="Random">
-      {' '}
-      Random value bewtween {max} and {min} {'=>'} {rand}
+      Random value between {max} and {min} {'=>'} {rand}
     </p>
   )
 }
